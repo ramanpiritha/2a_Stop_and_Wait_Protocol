@@ -1,3 +1,5 @@
+## Name:  Piritharaman R
+## Ref no: 212223230148
 # 2a_Stop_and_Wait_Protocol
 ## AIM 
 To write a python program to perform stop and wait protocol
@@ -11,7 +13,7 @@ To write a python program to perform stop and wait protocol
 6. Stop the Program
 ```
 ## PROGRAM
-Client
+## Client
 ```
 import socket
 from datetime import datetime
@@ -27,7 +29,7 @@ if ack:
  print(ack)
 c.close()
 ```
-Server
+## Server
 ```
 import socket
 s=socket.socket()
@@ -37,9 +39,9 @@ print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
 ```
 ## OUTPUT
-Client
+## Client
 ![image](https://github.com/ramanpiritha/2a_Stop_and_Wait_Protocol/assets/147084116/b2599c5f-5b36-4149-a54d-d276029e68a4)
-Server
+## Server
 ![image](https://github.com/ramanpiritha/2a_Stop_and_Wait_Protocol/assets/147084116/db48a412-3650-465f-b180-7b40a6135258)
 
 
