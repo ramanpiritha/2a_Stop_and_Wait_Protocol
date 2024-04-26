@@ -1,5 +1,5 @@
-## Name:  Piritharaman R
-## Ref no: 212223230148
+# Name:  Piritharaman R
+# Ref no: 212223230148
 # 2a_Stop_and_Wait_Protocol
 ## AIM 
 To write a python program to perform stop and wait protocol
@@ -16,33 +16,39 @@ To write a python program to perform stop and wait protocol
 ## Client
 ```
 import socket
-from datetime import datetime
 s=socket.socket()
 s.bind(('localhost',8000))
 s.listen(5)
 c,addr=s.accept()
-print("Client Address : ",addr)
-now = datetime.now()
-c.send(now.strftime("%d/%m/%Y %H:%M:%S").encode())
-ack=c.recv(1024).decode()
-if ack:
- print(ack)
-c.close()
+while True:
+ i=input("Enter a data: ")
+ c.send(i.encode())
+ ack=c.recv(1024).decode()
+ if ack:
+   print(ack)
+   continue
+ else:
+   c.close()
+   break
 ```
 ## Server
 ```
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
-print(s.getsockname())
-print(s.recv(1024).decode())
-s.send("acknowledgement recived from the server".encode())
+while True:
+ print(s.recv(1024).decode())
+ s.send("Acknowledgement Recived".encode())
 ```
 ## OUTPUT
+
 ## Client
-![image](https://github.com/ramanpiritha/2a_Stop_and_Wait_Protocol/assets/147084116/b2599c5f-5b36-4149-a54d-d276029e68a4)
+![stop wait client](https://github.com/ramanpiritha/2a_Stop_and_Wait_Protocol/assets/147084116/169111f2-cb6e-4a23-9474-1e2655b31af8)
+
+
 ## Server
-![image](https://github.com/ramanpiritha/2a_Stop_and_Wait_Protocol/assets/147084116/db48a412-3650-465f-b180-7b40a6135258)
+![stop wait server](https://github.com/ramanpiritha/2a_Stop_and_Wait_Protocol/assets/147084116/ec0dc177-8129-4015-90a4-cb8416882848)
+
 
 
 ## RESULT
